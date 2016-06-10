@@ -1,0 +1,24 @@
+<div  class="row col-md-10 col-md-offset-1">
+
+  <% users.each do |user| %>
+
+    <div class="search_thumbnails col-sm-6 col-md-3">
+      <div class="search_img">
+        <img src="<%= user.profile_image_url %>">
+      </div>
+      <div class="search_caption">
+        <h5><%= user.name%></h5>
+      </div>
+      <div class="search_btn">
+        <%= form_for Proposal.new, url: add_proposal_path, method: :post do |f| %>
+          <%= f.hidden_field :name, value: user.name%>
+          <%= f.hidden_field :avatar, value: user.profile_image_url %>
+          <%= f.hidden_field :twitter_handle, value: user.screen_name  %>
+          <%= f.submit "+", class: "btn btn-default btn-xs" %>
+        <% end %>
+      </div>
+    </div>
+
+  <% end %>
+
+</div>

@@ -1,0 +1,5 @@
+<% if @users.empty? %>
+  $('#search_results').html("<h4 class='text-center'>No se encontro nada!</h4><br><img class='center-block'src='https://codealab.files.wordpress.com/2016/05/screen-shot-2016-05-27-at-7-56-29-pm-e1464397233885.png'>");
+<% else %>
+  $('#search_results').html("<%= j render('users', users: @users) %>");
+<% end %>

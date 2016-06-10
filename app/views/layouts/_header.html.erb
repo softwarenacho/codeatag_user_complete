@@ -1,0 +1,11 @@
+<header class="navbar navbar-fixed-top navbar-inverse">
+  <div class="container">
+    <%= link_to image_tag("http://codeatag.herokuapp.com/assets/tag_logo-394f282e31e3ec624989e06880ff128e31b78213d137e2eb078c26b4d560c4f1.png", alt: "tag", :height => 40) , "http://tagfestival.com/", class: "logo", id: "logo_tag" %>
+    	<ul class="nav navbar-nav" style="text-align:center">
+    		<li><%= link_to "Propuestas", root_path %></li>
+    		<li><%= link_to "Nueva propuesta", new_proposal_path %></li>
+    		<li><%= link_to "Propón con Twitter", twitter_proposal_path %></li>
+    	</ul>
+    <%= link_to image_tag("http://codeatag.herokuapp.com/assets/codeacamp_logo-33e6d9abba6ded2b8cc0144f86cdf60c3c5c00e5302194e6d7e3a10f0edfd3fb.png", alt: "Codea", :height => 40) , "http://codea.mx/", class: "logo", id: "logo_codea" %>
+  </div>
+</header>

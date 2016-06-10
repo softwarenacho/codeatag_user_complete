@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CodeaTAG</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <%= render "layouts/header"  %>
+  <div id="content">
+  <div id="flash_div">
+	  <% flash.each do |key, value| %>
+	    <div class="col-md-12 col-sm-12 col-xs-12 form-group flash_message">
+	        <%= content_tag(:div, value, class: "alert alert-#{key}") %>
+	    </div>  
+	  <% end %>
+	</div>  
+    <%= yield %>
+  <div class="clear"></div>
+  </div>
+</body>
+</html>

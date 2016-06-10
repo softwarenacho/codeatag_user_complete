@@ -1,0 +1,166 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+.inline-img {
+  display: inline-block;
+}
+
+.clear {
+    clear:both;
+}
+
+.pull-right {
+    margin-left:5px;
+}
+
+// Jumbotron
+
+.jumbotron {
+    color: #3F3F3F;
+  background-color: rgba(255, 255, 255, 0.21);
+  margin-top: 75px;
+  border: none;
+}
+
+// Centra la ul para poner una nav a la mitad
+
+.navbar {
+  text-align:center;
+}
+
+.navbar-nav {
+    display:inline-block;
+    float:none;
+}
+
+.logo {
+  margin-top: -3px;
+  margin-right: 10px;
+  padding-top: 9px;
+}
+
+#logo_tag {
+    float: left;
+}
+
+#logo_codea {
+    float: right;
+}
+
+#content {
+    margin-top:50px;
+  height:auto;
+}
+
+#first_section {
+    background:#89E2CA;
+    min-height: 250px;
+}
+
+h1 {
+    font-family: sans-serif;
+}
+
+.title {
+    margin-top:40px;
+    height:130px;
+}
+
+.input-group-addon {
+    font-size:30px;
+    color:#337ab7;
+
+}
+
+.panel-footer {
+  margin-bottom: 0;
+}
+
+
+// Twitter Seach Results
+
+#search_results {
+    margin-top: 30px;
+}
+
+.img_box {
+    max-width: 48px;
+    max-height: 48px;
+    position: relative;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+.flex-center{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.proposal_box{
+    width: 48px;
+    height: 48px;
+    vertical-align: middle;
+}
+
+.search_thumbnails {
+    border: 1px solid #ddd;
+    margin-top: 10px;
+    padding-left: 0px;
+    padding-right: 5px;
+}
+
+.search_thumbnails div{
+    display:inline-block;
+}
+
+.search_btn {
+    float:right;
+    margin-top: 6px;
+}
+
+.search_btn a {
+    display: block;
+    border: none;
+
+}
+
+.search_btn form {
+    margin-top: 7px;
+}
+
+.search_caption {
+    // margin-left: -8px;
+}
+
+.alert {
+    margin-top: 15px;
+}
+
+.alert-success {
+        background-color: rgba(51, 122, 183, 0.85);
+    border: none;
+    color: #FFF;
+}
+
+.proposal-input {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
