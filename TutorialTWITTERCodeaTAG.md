@@ -31,13 +31,16 @@ Esto es un requisito de la sección de desarrolladores de Twitter para poder cre
 
 En el tutorial anterior agregamos por ti la gema de Twitter al `Gemfile` de tu aplicación y esta fue instalada junto a las demás gemas de la misma, ahora debemos configurarla para poder comunicarnos con ella.
 
-El primer paso para desarrollar esta aplicación será obtener los códigos de autorización que nos da Twitter para acceder a sus servicios. Entra a la siguiente ruta para hacerlo:
+El primer paso para desarrollar esta aplicación será obtener los códigos de autorización que nos da Twitter para acceder a sus servicios. Entra a la siguiente ruta para hacerlo: [https://dev.twitter.com/apps/new](https://dev.twitter.com/apps/new). 
 
-- [https://dev.twitter.com/apps/new](https://dev.twitter.com/apps/new). 
+A continuación vamos a llenar todos los campos que Twitter nos pide para crear nuestra aplicación.
 
-En esta página deberás asignarle un nombre a tu aplicación, nosotros te recomendamos usar el formato `codeatag_` seguido de tu nombre o identificador favorito, en 'description' puedes explicar brevemente lo que hará tu aplicación o usar nuestra descripción por default: `This app creates proposals for TagCDMX using the Twitter API and sends them to CodeaTag app.`, en 'website' copia el link con el que abres tu aplicación (el que te señaló la consola de Cloud9 cuando levantaste tu servidor que debe ser algo parecido a: `https://codeatag-username.c9users.io/`), en 'Callback URL' debes poner esta misma dirección. 
-
-Para terminar este pasodeberás aceptar los terminos y condiciones de Twitter seleccionando el 'checkbox' y ahora puedes darle click a `Create your Twitter application`.
+- En el campo **Name:** escribe `codeatag_` seguido de tu nombre o identificador favorito.
+- En **Description:** puedes explicar brevemente lo que hará tu aplicación o usar nuestra descripción: `This app creates proposals for TagCDMX using the Twitter API and sends them to CodeaTag app.`
+- En **Website:** copia el link que Cloud9 te dio para tu aplicación. Algo parecido a `https://codeatag-username.c9users.io/`.
+- En **Callback URL:** vuelve a copiar la misma URL que pusiste en el campo anterior.
+- Para terminar este paso deberás aceptar los términos y condiciones de Twitter seleccionando el 'checkbox' debajo de éstas.
+- Darle click a `Create your Twitter application`.
 
 Una vez que tu aplicación sea creada de manera correcta, la página te llevará a un panel de configuración. Dentro de este panel accede a la pestaña de `Keys and Access Tokens` donde encontrarás tu `Consumer Key (API Key)` y tu `Consumer Secret (API Secret)`.
 
