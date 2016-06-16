@@ -3,6 +3,7 @@ class CreateProposals < ActiveRecord::Migration
     create_table :proposals do |t|
       t.string :name
       t.string :avatar
+      t.string :twitter_handle
 
       t.timestamps null: false
     end
