@@ -26,9 +26,32 @@ Vamos a crear una aplicación que te permitirá proponer invitados a Tag CDMX pa
 
 Para ello crearemos un modelo Propuesta que estará compuesto de 2 atributos:
 
-- name `string` (contendrá el nombre del invitado propuesto)
-- avatar `string` (un link a la imagen del invitado)
-- twitter_handle `string` (el username de Twitter)
+<table class="table table-responsive table-bordered table-condensed">
+  <thead> 
+    <tr>    
+      <th>Nombre</th>
+      <th>Tipo de Dato</th>
+      <th>Descripción</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>name</td>
+      <td>string</td>
+      <td>Nombre<br></td>
+    </tr>
+    <tr>
+      <td>avatar</td>
+      <td>string</td>
+      <td>Imagen</td>
+    </tr>
+    <tr>
+      <td>twitter_handle</td>
+      <td>string</td>
+      <td>Nombre de usuario en Twitter</td>
+    </tr>
+  </tbody>
+</table>
 
 ## Actividades
 
