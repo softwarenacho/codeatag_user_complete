@@ -1,7 +1,6 @@
 require File.expand_path('../boot', __FILE__)
 
 require "rails"
-# Pick the frameworks you want:
 require "active_model/railtie"
 require "active_job/railtie"
 require "active_record/railtie"
@@ -9,13 +8,12 @@ require "action_controller/railtie"
 require "action_mailer/railtie"
 require "action_view/railtie"
 require "sprockets/railtie"
-# require "rails/test_unit/railtie"
 require "pp"
 
-# Require the gems listed in Gemfile, including any gems
-# you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
+# Este modulo se encarga de interpretar el archivo que contiene tus tokens
+# y agregarlos como variables de entorno para tu aplicación.
 module CodeaTAG
   class Application < Rails::Application
     config.active_record.raise_in_transactional_callbacks = true
@@ -28,7 +26,7 @@ module CodeaTAG
   end
 end
 
-# Aquí es donde vamos a pegar el TwitterClient 
+# Este código crea un cliente de Twitter con los tokens que nos fueron asignados
 CLIENT = Twitter::REST::Client.new do |config|
   config.consumer_key        = Rails.application.secrets.consumer_key
   config.consumer_secret     = Rails.application.secrets.consumer_secret
