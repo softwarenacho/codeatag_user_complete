@@ -1,6 +1,6 @@
-# Tutorial Cloud9
+# Tutorial Codea Proposals
 
-### Crear cuenta
+### Crear cuenta en Cloud9
 Entra a la página de **[Cloud9](https://c9.io)** y crea una cuenta, seguramente tendrás que activarla en el mail con el que te registraste.
 
 ### Crear un nuevo workspace
@@ -524,7 +524,7 @@ Ahí debes llenar el formulario que se te presenta, una vez que hayas enviado el
 
 ### Configurar la API de Twitter y CodeaTag
 
-La información que generamos en el paso anterior es privada y te pertenece, para protegerla utilizaremos un archivo de Rails en dónde guardaremos tus `tokens` y nadie podrá acceder a ellos más que tú, para esto deberás navegar al archivo 'codeatag_app/config/twitter_secret.yml' donde verás el siguiente código:
+La información que generamos en el paso anterior es privada y te pertenece, para protegerla utilizaremos un archivo de Rails en dónde guardaremos tus `tokens` y nadie podrá acceder a ellos más que tú, para esto deberás navegar al archivo 'codeatag/config/twitter_secret.yml' donde verás el siguiente código:
 
 ```ruby
 CONSUMER_KEY: 
@@ -588,7 +588,7 @@ En el vamos a colocar los métodos que se encargarán de:
 -Buscar una propuesta en Twitter
 -Guardar una nueva propuesta de Twitter
 
-Todas estas funciones se ejecutan sustituyendo el contenido del archivo 'codeatag_app/app/controllers/twitter_controller.rb' por el siguiente código, lee los comentarios para entender la función de cada uno de ellos:
+Todas estas funciones se ejecutan sustituyendo el contenido del archivo 'codeatag/app/controllers/twitter_controller.rb' por el siguiente código, lee los comentarios para entender la función de cada uno de ellos:
 
 ```ruby
 class TwitterController < ApplicationController
@@ -624,7 +624,7 @@ end
 
 **Recuerda grabar tus archivos después de cada modificación.**
 
-En la carpeta '/codeatag_app/app/views/twitter/twitter_proposal.html.erb' hemos creado por ti los archivos de vistas necesarios para estas nuevas funcionalidades.
+En la carpeta '/codeatag/app/views/twitter/twitter_proposal.html.erb' hemos creado por ti los archivos de vistas necesarios para estas nuevas funcionalidades.
 
 Con esto ya podrás acceder a tu nueva página en tu aplicación ('Propón con Twitter'), en ella podrás buscar y agregar nuevas propuestas a tu aplicación, intenta agregar varias propuestas por este medio y checa como se ven en tu página principal de propuestas.
 
