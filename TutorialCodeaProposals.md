@@ -6,11 +6,18 @@ Entra a la página de **[Cloud9](https://c9.io)** y crea una cuenta, seguramente
 ### Crear un nuevo workspace
 1. Da click en 'Create a new workspace'
 2. En el campo **Create workspace** escribe: `codeatag`
-3. En el campo **Description** puedes explicar brevemente lo que hará tu aplicación o usar nuestra descripción: `This app creates proposals for TagCDMX using the Twitter API and sends them to CodeaTag app.` 
+3. En el campo **Description** puedes explicar brevemente lo que hará tu aplicación o usar nuestra descripción: `This app creates proposals for TagCDMX using the Twitter API and sends them to CodeaTag app.`
 4. En la opción **Hosted Workspace** seleccionar **'Public'**
 5. En el campo **Clone from Git or Mercurial URL** vamos a pegar la siguiente URL: `https://github.com/softwarenacho/codeatag.git`. Esto nos permite clonar (copiar) un esqueleto  con el código mínimo para empezar con tu aplicación.
 6. En **Choose a template** seleccionamos el template `Ruby`.
 7. Da click en **Create workspace** para pasar al siguiente paso.
+
+![Cloud9 Workspace](https://codealab.files.wordpress.com/2016/06/creating_workspace.png)
+
+### Interfaz de Cloud9
+**Familiarízate con la interfaz de Cloud9**
+
+![Cloud9 Interface](https://codealab.files.wordpress.com/2016/06/interface_cloud9.png)
 
 ## Objetivos Académicos
 
@@ -26,32 +33,11 @@ Vamos a crear una aplicación que te permitirá proponer invitados a Tag CDMX pa
 
 Para ello crearemos un modelo Propuesta que estará compuesto de 2 atributos:
 
-<table class="table table-responsive table-bordered table-condensed">
-  <thead> 
-    <tr>    
-      <th>Nombre</th>
-      <th>Tipo de Dato</th>
-      <th>Descripción</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>name</td>
-      <td>string</td>
-      <td>Nombre<br></td>
-    </tr>
-    <tr>
-      <td>avatar</td>
-      <td>string</td>
-      <td>Imagen</td>
-    </tr>
-    <tr>
-      <td>twitter_handle</td>
-      <td>string</td>
-      <td>Nombre de usuario en Twitter</td>
-    </tr>
-  </tbody>
-</table>
+| Nombre         | Tipo de Dato | Descripción                  |
+|----------------|--------------|------------------------------|
+| name           | `string`     | Nombre                       |
+| avatar         | `string`     | Link de la imagen            |
+| twitter_handle | `string`     | Nombre de usuario en Twitter |
 
 ## Actividades
 
@@ -87,66 +73,66 @@ Este comando nos crea el archivo `codeatag/app/controllers/proposals_controller.
 CRUD son las siglas de **Create, Read, Update** y **Destroy** y para nuestras aplicaciones está formado de 7 acciones que se explican a continuación:
 
 <table  class="table table-responsive table-bordered table-condensed">
-	<tr>
-		<th>Acción</th>
-		<th>CRUD</th>
-		<th>Vista</th>
-		<th>Verbo HTTP</th>
+  <tr>
+    <th>Acción</th>
+    <th>CRUD</th>
+    <th>Vista</th>
+    <th>Verbo HTTP</th>
     <th>PATH</th>
-		<th>Concepto</th>
-	</tr>
-	<tr>
-		<td>New</td>
-		<td rowspan="2">CREATE</td>
-		<td>new.html.erb</td>
-		<td>GET</td>
+    <th>Concepto</th>
+  </tr>
+  <tr>
+    <td>New</td>
+    <td rowspan="2">CREATE</td>
+    <td>new.html.erb</td>
+    <td>GET</td>
     <td>/proposals/new</td>
-		<td>Muestra el formulario para un nuevo objeto</td>
-	</tr>
-	<tr>
-		<td>Create</td>
-		<td></td>
-		<td>POST</td>
+    <td>Muestra el formulario para un nuevo objeto</td>
+  </tr>
+  <tr>
+    <td>Create</td>
+    <td></td>
+    <td>POST</td>
     <td>/proposals</td>
-		<td>Procesa o guarda el nuevo objeto</td>
-	</tr>	
-	<tr>
-		<td>Index</td>
-		<td rowspan="2">READ</td>
-		<td>index.html.erb</td>
-		<td>GET</td>
+    <td>Procesa o guarda el nuevo objeto</td>
+  </tr>
+  <tr>
+    <td>Index</td>
+    <td rowspan="2">READ</td>
+    <td>index.html.erb</td>
+    <td>GET</td>
     <td>/proposals</td>
-		<td>Muestra todos los objetos</td>
-	</tr>
-	<tr>
-		<td>Show</td>
-		<td>show.html.erb</td>
-		<td>GET</td>
+    <td>Muestra todos los objetos</td>
+  </tr>
+  <tr>
+    <td>Show</td>
+    <td>show.html.erb</td>
+    <td>GET</td>
     <td>/proposals/:id</td>
-		<td>Muestra un objeto especifico</td>
-	</tr>
-	<tr>
-		<td>Edit</td>
-		<td rowspan="2">UPDATE</td>
-		<td>edit.html.erb</td>
-		<td>GET</td>
+    <td>Muestra un objeto especifico</td>
+  </tr>
+  <tr>
+    <td>Edit</td>
+    <td rowspan="2">UPDATE</td>
+    <td>edit.html.erb</td>
+    <td>GET</td>
     <td>/proposals/:id/edit</td>
-		<td>Muestra el formulario para editar un objeto</td>
-	</tr>
-	<tr>
-		<td>Update</td>
-		<td></td>
-		<td>PUT/PATCH</td>
+    <td>Muestra el formulario para editar un objeto</td>
+  </tr>
+  <tr>
+    <td>Update</td>
+    <td></td>
+    <td>PUT/PATCH</td>
     <td>/proposals/:id</td>
-		<td>Guarda los datos editados del objeto</td>
-	</tr><tr>
-		<td>Destroy</td>
-		<td>DELETE</td>
-		<td></td>
-		<td>DELETE</td>
+    <td>Guarda los datos editados del objeto</td>
+  </tr><tr>
+    <td>Destroy</td>
+    <td>DELETE</td>
+    <td></td>
+    <td>DELETE</td>
     <td>/proposals/:id</td>
-		<td>Borra un objeto especificado</td>
-	</tr>
+    <td>Borra un objeto especificado</td>
+  </tr>
 </table>
 
 ## Creando el CRUD
@@ -195,7 +181,7 @@ La acción anterior trae de la base de datos todas las `Proposals` y como especi
           <div class="search_caption">
             <h5><%= link_to proposal.name, proposal_path(proposal) %></h5>
           </div>
-          <div class="search_btn">            
+          <div class="search_btn">
             <%= link_to "E", edit_proposal_path(proposal), class: "btn btn-default btn-xs" %>
             <%= link_to "X", proposal_path(proposal),
             method: :delete,
@@ -209,19 +195,21 @@ La acción anterior trae de la base de datos todas las `Proposals` y como especi
 </div>
 ```
 
-##### Levantando el servidor
-
-- Para poder visualizar nuestra aplicación en el navegador, tenemos que levantar nuestro servidor web. Te recomendamos abrir una nueva pestaña de terminal y ejecutar tu servidor en ella.
+> ####Levantando el servidor
+>
+>Para poder visualizar nuestra aplicación en el navegador, tenemos que levantar nuestro servidor web. Te recomendamos abrir una nueva pestaña de terminal y ejecutar tu servidor en ella.
 Esto lo haces dando click al símbolo de mas (+) que está junto a las pestañas de tu terminal y en el menú que se abre selecciona `New Terminal`.
 En esa nueva pestaña ejecuta el siguiente comando:
-
-``` bash
-$ rails s -p $PORT -b $IP
-```
+>
+>```bash
+>$ rails s -p $PORT -b $IP
+>```
 
 En este punto Cloud9 nos da acceso a una url como la siguiente `http://codeatag-username.c9users.io`, en donde verás la página default de bienvenida de Rails.
 
 El link a tu aplicación te saldrá del lado derecho de tu Terminal en una alerta verde, puedes darle click para que te abra una nueva pestaña con tu aplicación.
+
+![Loading Server](https://codealab.files.wordpress.com/2016/06/loading_server.png)
 
 
 #### Acción `new`
@@ -235,7 +223,7 @@ El link a tu aplicación te saldrá del lado derecho de tu Terminal en una alert
   end
 ```
 
-La acción anterior crea una `Proposal` vacía y como especifica el comentario, se mostrará el archivo '/codeatag/app/views/proposals/new.html.erb'. 
+La acción anterior crea una `Proposal` vacía y como especifica el comentario, se mostrará el archivo '/codeatag/app/views/proposals/new.html.erb'.
 
 - Pega el siguiente código HTML en este archivo.
 
@@ -243,18 +231,18 @@ La acción anterior crea una `Proposal` vacía y como especifica el comentario, 
 <div id="first_section">
   <div class="container">
     <h1 class="text-center">Agrega tu propuesta</h1>
-    <div class="row">            
+    <div class="row">
       <%= form_for @proposal do |f| %>
 
-      <div class="proposal-input col-md-offset-3 col-md-6 ">         
+      <div class="proposal-input col-md-offset-3 col-md-6 ">
         <%= f.text_field :name,   placeholder: "Nombre", class: "form-control" %>
       </div>
-      <div class="proposal-input col-md-offset-3 col-md-6 ">         
+      <div class="proposal-input col-md-offset-3 col-md-6 ">
         <%= f.text_field :avatar, placeholder: "Avatar", class: "form-control" %>
-      </div>    
+      </div>
       <div class="proposal-input col-md-offset-3 col-md-6">
         <%= f.submit "Crear", class: "btn btn-md btn-primary btn-block" %>
-      </div>      
+      </div>
       <% end %>
     </div><!-- first_section -->
   </div><!-- container -->
@@ -326,7 +314,7 @@ Esta acción mostrará el archivo '/codeatag/app/views/proposals/show.html.erb'.
     </div>
     <div class="panel-footer text-center h1">
       <%= @proposal.name %>
-      <div class="search_btn">            
+      <div class="search_btn">
         <%= link_to "E", edit_proposal_path(@proposal), class: "btn btn-default btn-xs" %>
         <%= link_to "X", proposal_path(@proposal), method: :delete,
         data: { confirm: "¿Seguro que quieres eliminar la propuesta?" }, class: "btn btn-default btn-xs" %>
@@ -358,18 +346,18 @@ La acción `edit`, nos permitirá corregir una `Proposal` en caso de que nos hay
 <div id="first_section">
   <div class="container">
     <h1 class="text-center">Editar Propuesta</h1>
-    <div class="row">            
+    <div class="row">
       <%= form_for @proposal do |f| %>
 
-      <div class="proposal-input col-md-offset-3 col-md-6 ">         
+      <div class="proposal-input col-md-offset-3 col-md-6 ">
         <%= f.text_field :name,   placeholder: "Nombre", class: "form-control" %>
       </div>
-      <div class="proposal-input col-md-offset-3 col-md-6 ">         
+      <div class="proposal-input col-md-offset-3 col-md-6 ">
         <%= f.text_field :avatar, placeholder: "Avatar", class: "form-control" %>
-      </div>    
+      </div>
       <div class="proposal-input col-md-offset-3 col-md-6">
         <%= f.submit "Guardar", class: "btn btn-md btn-primary btn-block" %>
-      </div>      
+      </div>
       <% end %>
     </div><!-- first_section -->
   </div><!-- container -->
@@ -381,7 +369,7 @@ Con esto ya funcionan los links para editar `E` en las propuestas de tu página 
 
 #### Acción `update`
 
-El formulario anterior se enviará a la acción `update` de nuestro controlador.  Necesitamos crear la acción con el código que contendrá la lógica para obtener de la base de datos el `proposal` y guardarlo con los nuevos valores. 
+El formulario anterior se enviará a la acción `update` de nuestro controlador.  Necesitamos crear la acción con el código que contendrá la lógica para obtener de la base de datos el `proposal` y guardarlo con los nuevos valores.
 
 - Ve a tu controlador y agrega el siguiente código de la misma manera que haz hecho con los métodos anteriores.
 
@@ -415,41 +403,41 @@ Tu archivo de controlador debe contener el siguiente código al final de estos p
 
 ```ruby
 class ProposalsController < ApplicationController
-    
+
   def index
     @proposals = Proposal.all.order(:name)
     # render 'proposals/index.html.erb'
   end
-  
+
   def new
     @proposal = Proposal.new
     # render 'proposal/new.html.erb'
   end
-  
+
   def create
     @proposal = Proposal.new(proposal_params)
     @proposal.save
     flash[:success] = "Propuesta Agregada"
     redirect_to proposals_path
   end
-  
+
   def show
     @proposal = Proposal.find(params[:id])
     # render 'proposals/show.html.erb'
   end
-  
+
   def edit
     @proposal = Proposal.find(params[:id])
     # render 'proposals/edit.html.erb'
   end
-  
+
   def update
     @proposal = Proposal.find(params[:id])
     @proposal.update(proposal_params)
     flash[:success] = "Propuesta actualizada"
     redirect_to proposal_path
   end
-  
+
   def destroy
     @proposal = Proposal.find(params[:id])
     @proposal.destroy
@@ -471,45 +459,46 @@ end
 
 ##¿Sabes lo que es un API (Application Programming Interface)?
 
-Un **API** es una "Librería" creada para poder comunicarse con un software en particular, de manera sencilla. Normalmente esta librería contiene funciones, especificaciones y procedimientos que te permiten comunicarte con ese software para recibir servicios del mismo. 
+Un **API** es una "Librería" creada para poder comunicarse con un software en particular, de manera sencilla. Normalmente esta librería contiene funciones, especificaciones y procedimientos que te permiten comunicarte con ese software para recibir servicios del mismo.
 
-Un ejemplo muy sencillo es lo que lograremos al integrar la API de **[Twitter](https://dev.twitter.com/overview/api)** y la aplicación de propuestas para Tag CDMX desarrollada por [Codea](http://www.codea.mx **[CodeaTag](http://codeatag.herokuapp.com/)**.
+Un ejemplo muy sencillo es lo que lograremos al integrar la **[API de Twitter](https://dev.twitter.com/overview/api)** y la aplicación de propuestas para Tag CDMX **[CodeaTag](http://codeatag.herokuapp.com/)**, desarrollada por **[Codea](http://www.codea.mx)**.
 
 Tu aplicación podrá buscar a través de **Twitter** información pública de sus usuarios para utilizarlos como propuestas. Para ello nos comunicaremos con **Twitter** utilizando su API y después mandaremos las propuestas creadas a **CodeaTag** para que Tag CDMX las tome en cuenta para el evento del siguiente año.
 
-- Sino tienes cuenta de Twitter o no tienes registrado tu número en la misma puedes seguir estos links para realizarlo:
+- Si no tienes cuenta de Twitter o no tienes registrado tu número en la misma puedes seguir estos links para realizarlo:
 
-[Crear cuenta de Twitter](https://twitter.com/signup)
+**[Crear cuenta de Twitter](https://twitter.com/signup)**
 
-[Registrar número movil en tu cuenta de Twitter](https://twitter.com/settings/devices)
+**[Registrar número móvil en tu cuenta de Twitter](https://twitter.com/settings/devices)**
 
 Esto es un requisito de la sección de desarrolladores de Twitter para poder crear tu aplicación.
 
 ### Creación de un Twitter Client
 
-El primer paso para agregar esta funcionalidad será obtener los códigos de autorización que nos da Twitter para acceder a sus servicios. Entra a la siguiente ruta para hacerlo: [https://dev.twitter.com/apps/new](https://dev.twitter.com/apps/new). 
+El primer paso para agregar esta funcionalidad será obtener los códigos de autorización que nos da Twitter para acceder a sus servicios. Entra a la siguiente ruta para hacerlo: [https://dev.twitter.com/apps/new](https://dev.twitter.com/apps/new).
 
 A continuación vamos a llenar todos los campos que Twitter nos pide para crear nuestra aplicación.
 
-- En el campo **Name:** escribe `codeatag_` seguido de tu nombre o identificador favorito.
-- En **Description:** puedes explicar brevemente lo que hará tu aplicación o usar nuestra descripción: `This app creates proposals for TagCDMX using the Twitter API and sends them to CodeaTag app.`
-- En **Website:** copia el link que Cloud9 te dio para tu aplicación. Algo parecido a `https://codeatag-username.c9users.io/`.
-- En **Callback URL:** vuelve a copiar la misma URL que pusiste en el campo anterior.
-- Para terminar este paso deberás aceptar los términos y condiciones de Twitter seleccionando el 'checkbox' debajo de éstas.
-- Darle click a `Create your Twitter application`.
+1. En el campo **Name:** escribe `codeatag_` seguido de tu nombre o identificador favorito.
+2. En **Description:** puedes explicar brevemente lo que hará tu aplicación o usar nuestra descripción: `This app creates proposals for TagCDMX using the Twitter API and sends them to CodeaTag app.`
+3. En **Website:** copia el link que Cloud9 te dio para tu aplicación. Algo parecido a `https://codeatag-username.c9users.io/`.
+4. En **Callback URL:** vuelve a copiar la misma URL que pusiste en el campo anterior.
+5. Para terminar este paso deberás aceptar los términos y condiciones de Twitter seleccionando el 'checkbox' debajo de éstas.
+6. Darle click a `Create your Twitter application`.
+![Creating Twitter App](https://codealab.files.wordpress.com/2016/06/twitter_signin.png)
+7. Una vez que tu aplicación sea creada de manera correcta, la página te llevará a un panel de configuración. Dentro de este panel accede a la pestaña de `Keys and Access Tokens` donde encontrarás tu `Consumer Key (API Key)` y tu `Consumer Secret (API Secret)`.
+8. Ahora debemos generar los `Access Token` para lo cual deberás ir a la parte inferior de tu página de keys y dar click en el botón que dice `Create my access token`, esto puede tardar unos momentos y deberá darte un mensaje de éxito en la misma página, si vuelves a bajar dentro de la misma encontrarás una sección titulada 'Your Access Token' en donde están ahora el `Access Token` y el `Access Token Secret`.
 
-- Una vez que tu aplicación sea creada de manera correcta, la página te llevará a un panel de configuración. Dentro de este panel accede a la pestaña de `Keys and Access Tokens` donde encontrarás tu `Consumer Key (API Key)` y tu `Consumer Secret (API Secret)`.
+![Twitter Tokens](https://codealab.files.wordpress.com/2016/06/twitter_all_tokens.png)
 
-- Ahora debemos generar los `Access Token` para lo cual deberás ir a la parte inferior de tu página de keys y dar click en el botón que dice `Create my access token`, esto puede tardar unos momentos y deberá darte un mensaje de éxito en la misma página, si vuelves a bajar dentro de la misma encontrarás una sección titulada 'Your Access Token' en donde están ahora el `Access Token` y el `Access Token Secret`.
-
-No cierres esta página pues la usaremos más adelante, en este punto deberás tener generados y ubicados los siguientes datos:
+No cierres esta página pues la usaremos más adelante. En este punto deberás tener generados y ubicados los siguientes datos:
 
 - Consumer Key
 - Consumer Secret
 - Access Token
 - Access Token Secret
 
-Ahora sí tienes todo lo necesario para crear un "Twitter Client".
+**Ahora sí tienes todo lo necesario para crear un "Twitter Client".**
 
 ### Obtener token de CodeaTag
 
@@ -521,17 +510,19 @@ Para conseguir este token debes acceder a la aplicación de CodeaTag entrando al
 
 Ahí debes llenar el formulario que se te presenta, una vez que hayas enviado el mismo verás una página en la que en la parte inferior podrás ver tu `API Token`, manten esta página abierta pues la usaremos en el siguiente paso.
 
+![Codea Token](https://codealab.files.wordpress.com/2016/06/codea_token.png)
+
 
 ### Configurar la API de Twitter y CodeaTag
 
 La información que generamos en el paso anterior es privada y te pertenece, para protegerla utilizaremos un archivo de Rails en dónde guardaremos tus `tokens` y nadie podrá acceder a ellos más que tú, para esto deberás navegar al archivo 'codeatag/config/twitter_secret.yml' donde verás el siguiente código:
 
 ```ruby
-CONSUMER_KEY: 
-CONSUMER_KEY_SECRET: 
-ACCESS_TOKEN: 
-ACCESS_TOKEN_SECRET: 
-CODEA_TAG_API_TOKEN: 
+CONSUMER_KEY:
+CONSUMER_KEY_SECRET:
+ACCESS_TOKEN:
+ACCESS_TOKEN_SECRET:
+CODEA_TAG_API_TOKEN:
 ```
 
 - Ve a la página de tu aplicación en Twitter y agrega en el archivo `twitter_secrets.yml` los tokens correspondientes después de los dos puntos.
@@ -540,13 +531,7 @@ CODEA_TAG_API_TOKEN:
 
 - Al finalizar este archivo con los tokens añadidos deberá lucir parecido al siguiente:
 
-```
-CONSUMER_KEY: fuhvA2jghbsSJN0gri7uOk
-CONSUMER_KEY_SECRET: 3KBDN783hb37BHChGSMjMXCvoCgjnb8mCknHB6DsiEt5j
-ACCESS_TOKEN: 68547857-3ys6nuJU87DJNdCAur6nnanak0f789ABCabcuDJC73y6p
-ACCESS_TOKEN_SECRET: RY6Jfy945N4ch0zXM87njnuHBYbu7bjbnh6GBNDJtpWz
-CODEA_TAG_API_TOKEN: 1257fe2d98nfjn7snjsnuybnha8j7dn
-```
+![Twitter Secrets](https://codealab.files.wordpress.com/2016/06/twitter_secrets.png)
 
 Estos códigos no funcionan, así que no los copies a tu aplicación, ten el cuidado de pegar tus propios **tokens** en el mismo.
 
@@ -568,7 +553,7 @@ Regresa a tu pestaña de Terminal en la que trabajamos (la primera) y preparate 
 
 - El archivo `/config/application.rb` se utiliza para definir algunos de los comportamientos básicos de tu aplicación. Dentro de este archivo agregaremos dos partes importantes:
 1. El método que lee los tokens del archivo `twitter_secrets.yml`
-2. El cliente por medio del cual nos comunicaremos con Twitter. 
+2. El cliente por medio del cual nos comunicaremos con Twitter.
 
 - Revisa los comentarios dentro de este archivo para que comprendas qué hace este código.
 
@@ -592,19 +577,19 @@ Todas estas funciones se ejecutan sustituyendo el contenido del archivo 'codeata
 
 ```ruby
 class TwitterController < ApplicationController
-  
+
   # Redirige al usuario a la página de Propuesta con Twitter
   def twitter_proposal
     @proposal = Proposal.new
   end
-  
+
   # Accede al cliente para buscar usuarios de Twitter
   def search_users
     @search_word = params[:twitter][:search]
-    @users = CLIENT.user_search(@search_word) 
+    @users = CLIENT.user_search(@search_word)
   end
-  
-  # Añade el usuario de Twitter a nuestras propuestas 
+
+  # Añade el usuario de Twitter a nuestras propuestas
   def add_proposal
     @proposal = Proposal.create(proposal_params)
     # Este es el comando que se comunica con CodeaTag para guardar tus propuestas.
@@ -612,13 +597,13 @@ class TwitterController < ApplicationController
     flash[:success] = "Propuesta Agregada"
     redirect_to proposals_path
   end
-  
+
   private
 
   def proposal_params
     params.require(:proposal).permit(:name, :avatar, :twitter_handle)
   end
-  
+
 end
 ```
 
