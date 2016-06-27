@@ -326,19 +326,25 @@ Esta acción mostrará el archivo '/codeatag/app/views/proposals/show.html.erb'.
 ``` erb
 <div class="col-md-4 col-md-offset-4">
   <div class="panel panel-default">
-    <div class="panel-body">
+    <div class="panel-body flex-center">
       <% if @proposal.avatar == "" %>
-        <%= link_to image_tag("http://icons.veryicon.com/128/Avatar/Face%20Avatars/Male%20Face%20N2.png", class:"img-responsive text-center"), proposal_path(@proposal) %>
+        <%= image_tag("http://icons.veryicon.com/128/Avatar/Face%20Avatars/Male%20Face%20N2.png", class:"img-responsive")%>
       <% else %>
-        <%= image_tag(@proposal.avatar, class:"img-responsive text-center")%>
+        <% avatar = @proposal.avatar.gsub!("_normal", "") %>
+        <%= image_tag(avatar == nil ? @proposal.avatar : avatar, class:"img-responsive")%>
       <% end %>
     </div>
     <div class="panel-footer text-center h1">
+    <% p "*"*100 %>
+    	<% p @proposal %>
+    	<% if @proposal.twitter_handle != nil %>
+        <%= link_to image_tag("http://icons.veryicon.com/png/Application/Android%20Lollipop%20Apps/Twitter.png", class:"twitter_link", height: "40px", style: "margin-bottom: 10px;"), "http://www.twitter.com/#{@proposal.twitter_handle}", target: "_blank"%>
+      <% end %>
       <%= @proposal.name %>
       <div class="search_btn">
-        <%= link_to "E", edit_proposal_path(@proposal), class: "btn btn-default btn-xs" %>
-        <%= link_to "X", proposal_path(@proposal), method: :delete,
-        data: { confirm: "¿Seguro que quieres eliminar la propuesta?" }, class: "btn btn-default btn-xs" %>
+	        <%= link_to "E", edit_proposal_path(@proposal), class: "btn btn-default btn-xs" %>
+	        <%= link_to "X", proposal_path(@proposal), method: :delete,
+	        data: { confirm: "¿Seguro que quieres eliminar la propuesta?" }, class: "btn btn-default btn-xs" %>
       </div>
     </div>
   </div>
