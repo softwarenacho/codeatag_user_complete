@@ -312,6 +312,7 @@ Con este método ya podemos crear propuestas nuevas. Agrega por lo menos 3 propu
 ``` ruby
   def show
     @proposal = Proposal.find(params[:id])
+    @counter = @proposal.counter_codea.body
     # render 'proposals/show.html.erb'
   end
 ```
@@ -333,6 +334,7 @@ Esta acción mostrará el archivo '/codeatag/app/views/proposals/show.html.erb'.
         <% avatar = @proposal.avatar.gsub!("_normal", "") %>
         <%= image_tag(avatar == nil ? @proposal.avatar : avatar, class:"img-responsive")%>
       <% end %>
+      <div class="btn btn-danger btn-xs counter"> <%= @counter %></div>
     </div>
     <div class="panel-footer text-center h1">
     <% p "*"*100 %>
@@ -450,6 +452,7 @@ class ProposalsController < ApplicationController
 
   def show
     @proposal = Proposal.find(params[:id])
+    @counter = @proposal.counter_codea.body
     # render 'proposals/show.html.erb'
   end
 
