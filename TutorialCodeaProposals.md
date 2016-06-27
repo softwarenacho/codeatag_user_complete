@@ -31,13 +31,34 @@ Entra a la página de **[Cloud9](https://c9.io)** y crea una cuenta, seguramente
 
 Vamos a crear una aplicación que te permitirá proponer invitados a Tag CDMX para los siguientes eventos.
 
-Para ello crearemos un modelo Propuesta que estará compuesto de 2 atributos:
+Para ello crearemos un modelo Propuesta que estará compuesto de 3 atributos:
 
-| Nombre         | Tipo de Dato | Descripción                  |
-|----------------|--------------|------------------------------|
-| name           | `string`     | Nombre                       |
-| avatar         | `string`     | Link de la imagen            |
-| twitter_handle | `string`     | Nombre de usuario en Twitter |
+<table class="table table-responsive table-bordered table-condensed">
+	<thead>
+	<tr>
+		<th>Nombre</th>
+		<th>Tipo de Dato</th>
+		<th>Descripción</th>
+	</tr>
+	</thead>
+	<tbody>
+	<tr>
+		<td>name</td>
+		<td>string</td>
+		<td>Nombre</td>
+	</tr>
+	<tr>
+		<td>avatar</td>
+		<td>string</td>
+		<td>Link de la imagen</td>
+	</tr>
+	<tr>
+		<td>twitter_handle</td>
+		<td>string</td>
+		<td>Nombre de usuario de Twitter</td>
+	</tr>
+	</tbody>
+</table>
 
 ## Actividades
 
