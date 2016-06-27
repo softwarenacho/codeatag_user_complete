@@ -1,18 +1,17 @@
 <div id="first_section">
-	<div class="container">	
-		<h1 class="title text-center">¿Cuál es tu propuesta de Speaker?</h1>
-		<div class="row">           
-      <%= form_tag twitter_search_path, method: "get", remote: true , class: "form-inline" do %>
-      	<div class="input-group form-group-lg col-md-offset-2 col-md-6 ">
-      		<div class="input-group-addon">@</div>
-      		<%= text_field :twitter, :search, class: "form-control" %>
-      	</div>
-      	<div class="input-group col-md-2">
-      		<%= button_tag "Search" , class: "btn btn-lg btn-primary btn-block" %>				
-      	</div>
-	    <% end %>
+  <div class="container">
+    <div class="row">
+      <h1 class="title text-center" id="speaker-title">¿Cuál es tu propuesta de Speaker?</h1>
+      <%= form_tag twitter_users_search_path, method: "get",remote: true , class: "form-inline" do %>
+        <div class="input-group form-group-lg col-md-offset-2 col-md-6 col-xs-12">
+          <div class="input-group-addon">@</div>
+          <%= text_field :twitter, :search, class: "form-control" %>
+        </div>
+        <div class="input-group col-md-2 col-xs-12">
+          <%= button_tag "Search" , class: "btn btn-lg btn-primary btn-block" %>
+        </div>
+      <% end %>
     </div><!-- first_section -->
   </div><!-- container -->
 </div>
-<div id="search_results" class="row">	
-</div>
+<div id="search_results" class="row"></div>

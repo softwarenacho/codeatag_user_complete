@@ -1,11 +1,30 @@
-<header class="navbar navbar-fixed-top navbar-inverse">
-  <div class="container">
-    <%= link_to image_tag("http://codeatag.herokuapp.com/assets/tag_logo-394f282e31e3ec624989e06880ff128e31b78213d137e2eb078c26b4d560c4f1.png", alt: "tag", :height => 40) , "http://tagfestival.com/", class: "logo", id: "logo_tag" %>
-    	<ul class="nav navbar-nav" style="text-align:center">
-    		<li><%= link_to "Propuestas", root_path %></li>
-    		<li><%= link_to "Nueva propuesta", new_proposal_path %></li>
-    		<li><%= link_to "Propón con Twitter", twitter_proposal_path %></li>
-    	</ul>
-    <%= link_to image_tag("http://codeatag.herokuapp.com/assets/codeacamp_logo-33e6d9abba6ded2b8cc0144f86cdf60c3c5c00e5302194e6d7e3a10f0edfd3fb.png", alt: "Codea", :height => 40) , "http://codea.mx/", class: "logo", id: "logo_codea" %>
+<nav class="navbar navbar-fixed-top navbar-inverse">
+  <div class="container-fluid">
+    <!-- <div class="navbar-header"> -->
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-menu" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <%= link_to image_tag("tag_logo.png", alt: "TagCDMX", :height => 32) , root_path, class: "navbar-brand logo", id: "logo_tag" %>
+      <%= link_to image_tag("codeacamp_logo.png", alt: "Codea", :height => 32) , root_path, class: "navbar-brand logo pull-right", id: "logo_codea" %>
+    <!-- </div> -->
+    <div class="collapse navbar-collapse" id="main-menu" >
+      <ul class="nav navbar-nav">
+        <li><%= link_to "Propón con Twitter", root_path %></li>
+        <li><%= link_to "Propuestas", proposals_path %></li>
+        <li><%= link_to "Nueva propuesta", new_proposal_path %></li>
+        <% unless signed_in? %>
+          <li><%= link_to "Iniciar Sesión", signin_path %></li>
+          <li><%= link_to "Registrarse", new_user_path %></li>
+        <% else %>
+          <li><%= link_to "Perfil", user_path(current_user) %></li>
+          <li><%= link_to "Cerrar Sesión", signout_path, method: "delete" %></li>
+        <% end %>
+      </ul>
+    </div>
+    <!-- <div class="navbar-header"> -->
+    <!-- </div> -->
   </div>
-</header>
+</nav>
