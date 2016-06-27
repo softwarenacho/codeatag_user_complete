@@ -540,7 +540,7 @@ La información que generamos en el paso anterior es privada y te pertenece, par
 
 ```ruby
 CONSUMER_KEY:
-CONSUMER_KEY_SECRET:
+CONSUMER_SECRET:
 ACCESS_TOKEN:
 ACCESS_TOKEN_SECRET:
 CODEA_TAG_API_TOKEN:
