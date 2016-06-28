@@ -1,0 +1,34 @@
+<div id="first_section">
+  <div class="container">
+    <div class="jumbotron well">
+      <h1 class="text-center">Propuestas para TagCDMX</h1>
+    </div>
+  </div><!-- container -->
+</div>
+<div  class="row col-md-10 col-md-offset-1">
+  <div id="search_results" class="row">
+    <% if @proposals.any? %>
+      <% @proposals.each do |proposal| %>
+        <div class="search_thumbnails col-sm-6 col-md-3">
+          <div class="search_img proposal_box">
+            <% if proposal.avatar == "" %>
+              <%= link_to image_tag("http://icons.veryicon.com/128/Avatar/Face%20Avatars/Male%20Face%20N2.png", class:"img_box"), proposal_path(proposal) %>
+            <% else %>
+              <%= image_tag(proposal.avatar, class:"img_box")%>
+            <% end %>
+          </div>
+          <div class="search_caption">
+            <h5><%= link_to proposal.name, proposal_path(proposal) %></h5>
+          </div>
+          <div class="search_btn">
+            <%= link_to "E", edit_proposal_path(proposal), class: "btn btn-default btn-xs" %>
+            <%= link_to "X", proposal_path(proposal),
+            method: :delete,
+            data: { confirm: "¿Seguro que quieres eliminar la propuesta?" }, class: "btn btn-default btn-xs" %>
+          </div>
+        </div>
+      <% end %>
+    <% else %>
+      <p>No has agregado propuestas aún</p>
+    <% end  %>
+</div>
