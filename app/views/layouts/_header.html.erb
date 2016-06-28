@@ -15,13 +15,6 @@
         <li><%= link_to "Propón con Twitter", root_path %></li>
         <li><%= link_to "Propuestas", proposals_path %></li>
         <li><%= link_to "Nueva propuesta", new_proposal_path %></li>
-        <% unless signed_in? %>
-          <li><%= link_to "Iniciar Sesión", signin_path %></li>
-          <li><%= link_to "Registrarse", new_user_path %></li>
-        <% else %>
-          <li><%= link_to "Perfil", user_path(current_user) %></li>
-          <li><%= link_to "Cerrar Sesión", signout_path, method: "delete" %></li>
-        <% end %>
       </ul>
     </div>
     <!-- <div class="navbar-header"> -->
