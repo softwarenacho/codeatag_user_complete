@@ -1,6 +1,15 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+body {
+  margin-top: 56px;
+}
+
+.container-fluid {
+  padding: 0 0;
+  margin: 0 0;
+}
+
 .inline-img {
   display: inline-block;
 }
@@ -39,24 +48,33 @@
   padding-top: 16px;
 }
 
-#logo_tag {
-  float: left;
-  display: inline;
-}
+// #logo_tag {
+  // float: left;
+  // display: inline;
+// }
 
-#logo_codea {
-  float: right;
-  display: inline;
-}
+// #logo_codea {
+  // float: right;
+  // display: inline;
+// }
 
-#content {
-  margin-top:50px;
-  height:auto;
+// #content {
+//   margin-top:50px;
+//   height:auto;
+// }
+
+.first-row {
+  margin: 0 0;
 }
 
 #first_section {
   background:#89E2CA;
+  width: 100%;
   min-height: 250px;
+}
+
+.proposals-index {
+  margin-top: 30px;
 }
 
 h1 {
@@ -109,6 +127,30 @@ h1 {
 
 .search_caption {
   // margin-left: -8px;
+}
+
+.caption {
+  display: inline-block;
+}
+
+.username-card {
+  display: inline-block;
+}
+
+.username-card-img {
+  height: 75px;
+  width: 75px;
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+
+.thumbnail {
+  padding: 0;
+}
+
+
+.thumbnail > img {
+  display: inline-block;
 }
 
 .alert {
@@ -164,7 +206,7 @@ h1 {
     .navbar-header {
         float: none;
     }
-    .navbar-left,.navbar-right {
+    .navbar-left, .navbar-right {
         float: none !important;
     }
     .navbar-toggle {
@@ -185,10 +227,10 @@ h1 {
         float: none!important;
         margin-top: 7.5px;
     }
-    .navbar-nav>li {
+    .navbar-nav > li {
         float: none;
     }
-    .navbar-nav>li>a {
+    .navbar-nav > li > a {
         padding-top: 10px;
         padding-bottom: 10px;
     }
@@ -196,3 +238,7 @@ h1 {
         display:block !important;
     }
 }
+
+// span.glyphicon {
+//     font-size: 1.9em;
+// }
