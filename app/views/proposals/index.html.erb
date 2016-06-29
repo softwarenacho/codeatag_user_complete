@@ -5,12 +5,12 @@
     </div>
   </div><!-- container -->
 </div>
-<div class="container proposals-index">
+<div class="container container-margin">
   <div class="row">
     <% if @proposals.any? %>
       <% @proposals.each do |proposal| %>
         <div class="col-sm-6 col-md-4">
-          <div class="thumbnail">
+          <div class="thumbnail thumbnail-fix">
             <% if proposal.avatar == "" %>
               <%= link_to image_tag("http://icons.veryicon.com/128/Avatar/Face%20Avatars/Male%20Face%20N2.png",
                                     class:"img_box"), proposal_path(proposal) %>

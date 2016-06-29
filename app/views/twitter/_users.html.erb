@@ -2,7 +2,7 @@
   <div class="row">
     <% users.each do |user| %>
       <div class="col-sm-6 col-md-4">
-        <div class="thumbnail">
+        <div class="thumbnail thumbnail-fix">
           <%= image_tag user.profile_image_url.to_s.gsub!("_normal", "_bigger"), class: "pull-left username-card-img" %>
           <div class="caption">
             <h5 class="text-center username-card" style="display:inline-block"><%= user.name %></h5>
